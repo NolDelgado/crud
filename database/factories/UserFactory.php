@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 use Laravel\Jetstream\Features;
-
+//TODO AGREGAR AL FORMATO DE MODIFICACION DE SEEDERS
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\User>
  */
@@ -31,11 +31,21 @@ class UserFactory extends Factory
             'email' => fake()->unique()->safeEmail(),
             'email_verified_at' => now(),
             'password' => static::$password ??= Hash::make('password'),
+            'phone' => fake()->phoneNumber(),
+            'fcm_code' => fake()->uuid(),
+            'career' => fake()->randomElement(['Ingenieria de software', 'Ingenieria en computacion', 'Ingenieria en plasticos', 'Ingenieria mecanica', 'Licenciatura en seguridad ciudadana', 'Ingenieria en produccion industrial']),
+            'semester' => fake()->numberBetween(1, 20),
+            'tuition' => fake()->numerify('#######'),
+            'validity' => fake()->date(),
+            'user_type' => fake()->word(),
             'two_factor_secret' => null,
             'two_factor_recovery_codes' => null,
+            'two_factor_confirmed_at' => null,
             'remember_token' => Str::random(10),
-            'profile_photo_path' => null,
             'current_team_id' => null,
+            'profile_photo_path' => null,
+            'created_at' => now(),
+            'updated_at' => now(),
         ];
     }
 
