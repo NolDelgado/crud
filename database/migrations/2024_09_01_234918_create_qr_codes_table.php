@@ -13,11 +13,9 @@ return new class extends Migration
     {
         Schema::create('qr_codes', function (Blueprint $table) {
             $table->id();
-            $table->string('token')->unique();
+            $table->text('token');
             //constrained() es un metodo que se encarga de crear una llave foranea en la tabla actual
             $table->foreignId('visit_id')->constrained();
-            $table->timestamp('expires_at');
-            $table->timestamp('start_at');
             $table->timestamps();
         });
     }

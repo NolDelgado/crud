@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('accesses', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('qr_code_id'); 
+            $table->foreignId('qr_code_id')->constrained();
             $table->integer('access_type');
             $table->timestamp('university_arrival'); 
             $table->timestamp('department_arrival')->nullable();

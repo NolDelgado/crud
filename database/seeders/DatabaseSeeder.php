@@ -14,17 +14,17 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         //! No descomentar, hasta que se tengan los modelos y las relaciones
-        //! RoleSeeder::class;
-
-        //! Descomentar en caso de que se quiera poblar la tabla de departamentos
-        //! $this->call(DepartmentSeeder::class);
-
+        RoleSeeder::class;
         //! Descomentar en caso de que se quieran crear usuarios de prueba
-        //! User::factory(25)->create();
+        User::factory(40)->create();
+        //! Descomentar en caso de que se quiera poblar la tabla de departamentos
+        $this->call(DepartmentSeeder::class);
 
-        /* User::factory()->create([
+        
+
+        User::factory()->create([
             'name' => 'Test User',
             'email' => 'test@example.com',
-        ]); */
+        ]);
     }
 }

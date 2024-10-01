@@ -75,8 +75,6 @@ class RegistrarVisita extends Component
         QrCode::create([
             'token' => $encrypted_token,
             'visit_id' => $visit->id,
-            'start_at' => $start_at,
-            'expires_at' => $end_at,
         ]);
     }
 }

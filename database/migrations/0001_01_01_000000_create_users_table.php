@@ -17,13 +17,6 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->string('telefono')->nullable(); // Campo de teléfono
-            $table->string('codigo_fcm')->nullable(); // Campo de código FCM (Firebase Cloud Messaging)
-            $table->string('carrera')->nullable(); // Campo de carrera
-            $table->string('semestre')->nullable(); // Campo de semestre
-            $table->string('numero_de_cuenta')->nullable(); // Campo de número de cuenta
-            $table->date('vigencia')->nullable(); // Campo de vigencia
-            $table->string('tipo_de_usuario')->nullable(); // Campo de tipo de usuario
             $table->rememberToken();
             $table->foreignId('current_team_id')->nullable();
             $table->string('profile_photo_path', 2048)->nullable();
