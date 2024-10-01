@@ -14,10 +14,12 @@ return new class extends Migration
         Schema::create('accesses', function (Blueprint $table) {
             $table->id();
             $table->foreignId('qr_code_id'); 
-            $table->timestamp('university_arrival')->nullable(); 
+            $table->integer('access_type');
+            $table->timestamp('university_arrival'); 
             $table->timestamp('department_arrival')->nullable();
             $table->timestamp('department_departure')->nullable();
-            $table->timestamp('university_departure')->nullable();
+            $table->timestamp('university_departure');
+            $table->boolean('closed_by_system')->default(false);
             $table->timestamps();
         });
     }
