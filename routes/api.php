@@ -10,6 +10,7 @@ Route::get('/user', function (Request $request) {
     return $request->user();
 })->middleware('auth:sanctum');
 
+//TODO DOCUMENTAR CREACION Y MODIFICACION DE LOGIN
 Route::post('/login', function (Request $request) {
     $request->validate([
         'email' => 'required|email',
@@ -37,4 +38,23 @@ Route::post('/login', function (Request $request) {
             'token' => $token */
         ], 200);
     }
+});
+
+//TODO DOCUMENTAR CREACION Y MODIFICACION DE REGISTRO DE VISITAS
+Route::post('/registrar-visita', function (Request $request) {
+    //! Validamos que nos envíen el código QR
+    $request->validate([
+        'qr_code' => 'required',
+    ]);
+
+    //! Desencriptar el código QR recibido
+    $decoded = decrypt($request->qr_code);
+
+    //! Convertimos la cadena JSON a un array
+    $data = json_decode($decoded, true);
+
+    //! Retornar los datos desencriptados
+    return response()->json([
+        'data' => $data
+    ], 200);
 });
