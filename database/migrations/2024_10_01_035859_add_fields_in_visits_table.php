@@ -13,9 +13,8 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('visits', function (Blueprint $table) {
-            $table->foreignId('user_id')->constrained();
-            //!foreign key de la tabla departments
-            $table->foreignId('department_id')->constrained();
+            //! Para crear un campo de texto en donde se pueda almacenar un motivo de visita
+            $table->text('visit_motive')->notNullable();
         });
     }
 
@@ -25,10 +24,7 @@ return new class extends Migration
     public function down(): void
     {
         Schema::table('visits', function (Blueprint $table) {
-            $table->dropForeign(['user_id']);
-            $table->dropForeign(['department_id']);
-            $table->dropColumn('user_id');
-            $table->dropColumn('department_id');
+            $table->dropColumn('visit_motive');
         });
     }
 };
