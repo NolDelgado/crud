@@ -6,6 +6,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Spatie\Permission\Models\Role;
 
+//TODO AGREGAR AL FORMATO DE CREACION DEL SEEDER DE ROLES
 class RoleSeeder extends Seeder
 {
     /**

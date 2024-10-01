@@ -8,7 +8,8 @@ use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Str;
 use Laravel\Jetstream\Features;
-//TODO AGREGAR AL FORMATO DE MODIFICACION DE SEEDERS
+//TODO AGREGAR AL FORMATO DE MODIFICACION DE FACTORIES DE USUARIOS
+//TODO AGREGAR AL FORMATO DE MODIFICACION DE FACTORIES DE USUARIOS
 /**
  * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\User>
  */

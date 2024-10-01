@@ -63,8 +63,17 @@ class User extends Authenticatable
         ];
     }
 
+    //TODO DOCUMENTAR LA CREACION DE LA RELACION DE UN USUARIO CON UN DEPARTAMENTO
+    //! Un usuario puede ser jefe de un departamento
     public function department()
     {
         return $this->hasOne(Department::class);
+    }
+
+    //TODO DOCUMENTAR LA CREACION DE LA RELACION DE UN USUARIO CON UNA VISITA
+    //! Un usuario puede tener muchas visitas
+    public function visits()
+    {
+        return $this->hasMany(Visit::class);
     }
 }
