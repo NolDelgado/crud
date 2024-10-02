@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -27,6 +26,13 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'phone',         // Campo de teléfono
+        'fcm_code',      // Campo de código FCM
+        'career',        // Campo de carrera
+        'semester',      // Campo de semestre
+        'tuition',       // Campo de número de cuenta
+        'validity',      // Campo de vigencia
+        'user_type',     // Campo de tipo de usuario
     ];
 
     /**
@@ -60,18 +66,17 @@ class User extends Authenticatable
         return [
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
+            'validity' => 'date', // Cast del campo de vigencia como fecha
         ];
     }
 
-    //TODO DOCUMENTAR LA CREACION DE LA RELACION DE UN USUARIO CON UN DEPARTAMENTO
-    //! Un usuario puede ser jefe de un departamento
+    // Relación: Un usuario puede ser jefe de un departamento
     public function department()
     {
         return $this->hasOne(Department::class);
     }
 
-    //TODO DOCUMENTAR LA CREACION DE LA RELACION DE UN USUARIO CON UNA VISITA
-    //! Un usuario puede tener muchas visitas
+    // Relación: Un usuario puede tener muchas visitas
     public function visits()
     {
         return $this->hasMany(Visit::class);
