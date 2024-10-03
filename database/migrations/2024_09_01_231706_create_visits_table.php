@@ -17,6 +17,10 @@ return new class extends Migration
             $table->foreignId('department_id')->constrained();
             $table->text('visit_motive')->notNullable();
             $table->boolean('status')->default(false);
+            //! Hora de la visita solo quiero la hora HH:MM:SS
+            $table->time('start_at');
+            //!fecha de la visita
+            $table->date('visit_date');
             $table->timestamps();
         });
     }

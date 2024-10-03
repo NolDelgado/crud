@@ -14,8 +14,9 @@ return new class extends Migration
         Schema::create('qr_codes', function (Blueprint $table) {
             $table->id();
             $table->text('token');
-            //constrained() es un metodo que se encarga de crear una llave foranea en la tabla actual
-            $table->foreignId('visit_id')->constrained();
+            //!constrained() es un metodo que se encarga de crear una llave foranea en la tabla actual
+            //TODO Documentar se agrego el onDelete('cascade') para que al eliminar una visita se elimine el qr asociado a la visita
+            $table->foreignId('visit_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }

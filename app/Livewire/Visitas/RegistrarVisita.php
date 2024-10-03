@@ -48,6 +48,8 @@ class RegistrarVisita extends Component
             'user_id' => auth()->user()->id,
             'department_id' => $this->department,
             'visit_motive' => $this->visit_motive,
+            'start_at' => $start_at,
+            'visit_date' => $this->visit_date,
         ]);
 
         $user = auth()->user()->id;
