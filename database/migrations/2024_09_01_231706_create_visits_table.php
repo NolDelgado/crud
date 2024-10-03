@@ -13,6 +13,10 @@ return new class extends Migration
     {
         Schema::create('visits', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained();
+            $table->foreignId('department_id')->constrained();
+            $table->text('visit_motive')->notNullable();
+            $table->boolean('status')->default(false);
             $table->timestamps();
         });
     }

@@ -5,8 +5,8 @@
 
     @if($visitas->isEmpty())
         <div class="p-6 text-center">
-            <p class="text-gray-600 dark:text-gray-400">No tienes visitas programadas.</p>
-        </div>
+            <p class="text-gray-600 dark:text-gray-400">No tienes visitas programadas.</p>>
+       
     @else
         @foreach ($visitas as $visita)
             <div class="p-6 flex justify-between items-center">
@@ -25,10 +25,13 @@
                         Editar
                     </a>
                     
-                    <button class="text-red-600 hover:text-red-500 dark:text-red-400" onclick="alert('Visita eliminada')">
-                        Eliminar
+                    <button class="text-red-600 hover:text-red-500 dark:text-red-400" wire:click='mostrarModal'>
+                            Eliminar      
                     </button>
                 </div>
+                @if ($esVisible)
+                    <livewire:modal-eliminar :visitas="$visitas" />
+                @endif
             </div>
         @endforeach
     @endif

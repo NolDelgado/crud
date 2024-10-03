@@ -16,6 +16,8 @@ class Visit extends Model
     protected $fillable = [
         'user_id',
         'department_id',
+        //TODO DOCUMENTAR MODIFICACION DE MODELO DE VISITAS
+        'visit_motive',
     ];
 
     //TODO DOCUMENTAR CREACION DE RELACIONES DE MODELOS DE VISITAS
