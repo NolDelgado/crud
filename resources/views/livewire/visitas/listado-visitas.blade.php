@@ -17,7 +17,7 @@
                 </div>
                 
                 <div class="flex space-x-4 items-center">
-                    <a href="/visitantes/show?1" class="text-blue-600 hover:text-blue-500 dark:text-blue-400">
+                    <a href="{{ route('visits.show', ['id' => $visita->id]) }}" class="text-blue-600 hover:text-blue-500 dark:text-blue-400">
                         Ver Detalles
                     </a>
                     

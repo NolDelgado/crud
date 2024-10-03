@@ -14,7 +14,7 @@ class ListadoVisitas extends Component
     public function mount()
     {
         
-        $this->visitas = Visit::with('department')->get();
+        $this->visitas = Visit::with('department','user')->get();
     } 
     protected $listeners = ['eliminarVisita', 'ocultaModal'];
     public $esVisible = false;
@@ -25,9 +25,10 @@ class ListadoVisitas extends Component
         //!Logica de programacion
 
         return view('livewire.visitas.listado-visitas',['visitas' => $visitas]);
+      
     }
 
-    
+
     public function mostrarModal()
     {
         $this->esVisible = true;
