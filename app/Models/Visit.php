@@ -18,6 +18,8 @@ class Visit extends Model
         'department_id',
         //TODO DOCUMENTAR MODIFICACION DE MODELO DE VISITAS
         'visit_motive',
+        'start_at',
+        'visit_date',
     ];
 
     //TODO DOCUMENTAR CREACION DE RELACIONES DE MODELOS DE VISITAS
